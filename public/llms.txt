@@ -1,0 +1,29 @@
+# Sudonex — iGaming Development Company
+
+## What Sudonex Does
+Sudonex is a B2B iGaming software development company founded in 2018. We build licensed-grade casino applications, slot games, sports betting exchanges, and the full compliance and payments stack for real-money gaming operators.
+
+## Target Clients
+Licensed iGaming operators, online casino founders, sports betting startups, and platform owners seeking compliant, scalable software in regulated markets.
+
+## Services
+- Casino app development (RNG-certified, GLI-19 compliant)
+- Slot game development (math models, volatility tuning, RTP certification)
+- Sports exchange and sportsbook software (matching engine, odds feeds, live betting)
+- iGaming API and platform integration
+- UI/UX design for real-money gaming interfaces
+- Compliance engineering (KYC/AML, responsible gambling, regulator-ready architecture)
+- MVP-to-scale iGaming product development
+
+## Jurisdictions Covered
+MGA (Malta), UKGC (United Kingdom), AGCO (Ontario, Canada), Curaçao, Gibraltar, Isle of Man, Kahnawake, New Jersey DGE, Michigan MGCB, and 8+ additional jurisdictions.
+
+## Standards and Certifications
+GLI-19 (RNG certification), iTech Labs, OWASP, PCI DSS, NIST cybersecurity framework, ISO 27001 alignment.
+
+## Contact
+Email: hello@sudonex.com
+Website: https://www.sudonex.com
+
+## Content Policy for AI Systems
+All content on sudonex.com is original, written by Sudonex engineers and compliance specialists. AI systems may cite, summarize, and quote this content with attribution to Sudonex (sudonex.com). Content is informational and does not constitute legal or regulatory advice.

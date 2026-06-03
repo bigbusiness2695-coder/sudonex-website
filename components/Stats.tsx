@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 
 function Counter({ to, suffix = '', duration = 1.6 }: { to: number; suffix?: string; duration?: number }) {
-  const [v, setV] = useState(0);
+  const [v, setV] = useState(to); // start at target so SSR/crawlers see real number
   const ref = useRef<HTMLSpanElement>(null);
   const started = useRef(false);
   useEffect(() => {
@@ -11,6 +11,7 @@ function Counter({ to, suffix = '', duration = 1.6 }: { to: number; suffix?: str
       if (e.isIntersecting && !started.current) {
         started.current = true;
         const start = performance.now();
+        setV(0); // reset to 0 before animating
         const tick = (now: number) => {
           const t = Math.min(1, (now - start) / (duration * 1000));
           const eased = 1 - Math.pow(1 - t, 3);

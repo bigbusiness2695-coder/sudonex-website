@@ -25,8 +25,9 @@ export default function AnimatedHero({
         )}
         <h1 className="font-display font-bold tracking-tight text-4xl md:text-6xl lg:text-7xl leading-[1.05] mb-6">
           {words.map((w, i) => (
-            <motion.span key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: i * 0.05 }} className="inline-block mr-3">
+            <motion.span key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: i * 0.05 }} className="inline-block mr-[0.28em]">
               {i === Math.floor(words.length/2) ? <span className="bg-gradient-to-r from-brand-400 via-cyan-400 to-gold-400 bg-clip-text text-transparent">{w}</span> : w}
+              {' '}
             </motion.span>
           ))}
         </h1>

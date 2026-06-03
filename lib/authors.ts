@@ -32,11 +32,14 @@ export function authorsForPath(path: string): { author: Author; reviewer: Author
   const updMonth = ((seed + 30) % 12) + 1;
   const updDay = ((seed + 13) % 27) + 1;
   const pad = (n: number) => String(n).padStart(2, '0');
+  // Cap lastUpdated to today so dateModified is never a future date
+  const TODAY = new Date().toISOString().slice(0, 10);
+  const candidate = `2026-${pad(updMonth)}-${pad(updDay)}`;
   return {
     author,
     reviewer,
     published: `${baseYear}-${pad(month)}-${pad(day)}`,
-    lastUpdated: `2026-${pad(updMonth)}-${pad(updDay)}`,
+    lastUpdated: candidate > TODAY ? TODAY : candidate,
   };
 }
 

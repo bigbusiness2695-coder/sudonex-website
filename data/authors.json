@@ -52,17 +52,10 @@
     "url": "https://sudonex.com",
     "logo": "https://sudonex.com/logo.png",
     "foundingDate": "2018-03-01",
-    "numberOfEmployees": "51-100",
-    "founders": [
-      { "@type": "Person", "name": "Sudonex Founders" }
-    ],
+    "numberOfEmployees": { "@type": "QuantitativeValue", "minValue": 51, "maxValue": 100 },
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Replace with real address",
-      "addressLocality": "Replace with city",
-      "addressRegion": "Replace",
-      "postalCode": "00000",
-      "addressCountry": "Replace"
+      "addressCountry": "MT"
     },
     "contactPoint": [
       { "@type": "ContactPoint", "contactType": "sales", "email": "hello@sudonex.com", "areaServed": "Worldwide" },
@@ -86,8 +79,6 @@
     "memberOf": [
       { "@type": "Organization", "name": "iGB Affiliate Network" }
     ],
-    "awards": [
-      "Trusted by 17+ licensed iGaming operators (placeholder — replace with real recognitions)"
-    ]
+    "slogan": "iGaming engineering that operators take seriously"
   }
 }
