@@ -83,7 +83,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
         reviewedBy: { '@type': 'Organization', name: reviewer.name, url: reviewer.linkedin },
         datePublished: published,
         dateModified: lastUpdated,
-        publisher: { '@type': 'Organization', name: 'Sudonex', logo: { '@type': 'ImageObject', url: 'https://sudonex.com/logo.png' } },
+        publisher: { '@type': 'Organization', name: 'Sudonex', logo: { '@type': 'ImageObject', url: 'https://www.sudonex.com/logo.png' } },
       };
     }
     return s;
