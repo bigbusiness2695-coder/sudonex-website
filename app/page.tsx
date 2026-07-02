@@ -12,7 +12,7 @@ import AuthorByline from '@/components/AuthorByline';
 import { authorsForPath } from '@/lib/authors';
 
 export const metadata: Metadata = {
-  title: 'Sudonex | iGaming Development Company — Casino, Slots, Sports Exchange',
+  title: 'iGaming Development Company | Casino & Sportsbook | Sudonex',
   description: 'Sudonex builds licensed-grade iGaming platforms — casino apps, slots, sports exchanges, MVP-to-scale builds. GLI/iTech ready, MGA/UKGC fluent.',
   alternates: { canonical: '/' },
 };

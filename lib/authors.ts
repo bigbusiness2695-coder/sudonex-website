@@ -24,23 +24,10 @@ export function authorsForPath(path: string): { author: Author; reviewer: Author
   const config = BY_LAYER[layer] || DEFAULT;
   const author = AUTHORS[config.author];
   const reviewer = AUTHORS[config.reviewer];
-  // Deterministic but plausible dates derived from the path so different pages have different timestamps
-  const seed = Array.from(path).reduce((a, c) => a + c.charCodeAt(0), 0);
-  const baseYear = 2025;
-  const month = (seed % 12) + 1;
-  const day = (seed % 27) + 1;
-  const updMonth = ((seed + 30) % 12) + 1;
-  const updDay = ((seed + 13) % 27) + 1;
-  const pad = (n: number) => String(n).padStart(2, '0');
-  // Cap lastUpdated to today so dateModified is never a future date
+  // Honest date: reflect the current build/deploy date instead of fabricating
+  // per-page publish/update timestamps (a manipulative freshness signal).
   const TODAY = new Date().toISOString().slice(0, 10);
-  const candidate = `2026-${pad(updMonth)}-${pad(updDay)}`;
-  return {
-    author,
-    reviewer,
-    published: `${baseYear}-${pad(month)}-${pad(day)}`,
-    lastUpdated: candidate > TODAY ? TODAY : candidate,
-  };
+  return { author, reviewer, published: TODAY, lastUpdated: TODAY };
 }
 
 export function organizationSchema() {

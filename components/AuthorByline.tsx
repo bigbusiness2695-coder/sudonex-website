@@ -1,6 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
-import { ShieldCheck, Calendar, Eye } from 'lucide-react';
+import { ShieldCheck, Eye } from 'lucide-react';
 import { Author } from '@/lib/authors';
 
 function fmtDate(iso: string) {
@@ -18,8 +18,8 @@ function Avatar({ name, accent }: { name: string; accent: string }) {
 }
 
 export default function AuthorByline({
-  author, reviewer, published, lastUpdated,
-}: { author: Author; reviewer: Author; published: string; lastUpdated: string }) {
+  author, reviewer, lastUpdated,
+}: { author: Author; reviewer: Author; published?: string; lastUpdated: string }) {
   return (
     <motion.section
       initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}
@@ -45,7 +45,6 @@ export default function AuthorByline({
             </div>
           </div>
           <div className="ml-auto flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-ink-muted">
-            <span className="inline-flex items-center gap-1.5"><Calendar size={12} /> Published <time dateTime={published}>{fmtDate(published)}</time></span>
             <span className="inline-flex items-center gap-1.5"><Eye size={12} /> Updated <time dateTime={lastUpdated}>{fmtDate(lastUpdated)}</time></span>
             <a href="/about-us/#editorial-standards" className="inline-flex items-center gap-1.5 text-brand-300 hover:text-brand-200">
               <ShieldCheck size={12} /> Editorial standards
