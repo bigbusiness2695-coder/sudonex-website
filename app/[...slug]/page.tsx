@@ -30,15 +30,19 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const path = pathFrom(slug);
   const page = getPage(path);
   if (!page) return {};
+  // Force canonical + OG url to the www host (matches the production redirect).
+  // Inner-page data carried non-www canonicals, which conflicted with the www 301 — a critical indexation bug.
+  const toWww = (u?: string) => u ? u.replace(/^https?:\/\/(?:www\.)?sudonex\.com/i, 'https://www.sudonex.com') : path;
+  const canonical = toWww(page.canonical);
   return {
     title: page.seo_title,
     description: page.meta_description,
-    alternates: { canonical: page.canonical || path },
+    alternates: { canonical },
     openGraph: {
       title: page.seo_title,
       description: page.meta_description,
       type: page.layer === 'resource' ? 'article' : 'website',
-      url: page.canonical || path,
+      url: canonical,
     },
     twitter: {
       card: 'summary_large_image',
